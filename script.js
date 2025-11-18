@@ -2,7 +2,7 @@ const defaultConfig = {
   profile_name: "Seu Nome",
   profile_title: "Seu Título ou Profissão",
   about_text: "Olá! Bem-vindo à minha página pessoal. Aqui você pode conhecer um pouco mais sobre mim, minha personalidade e meus interesses. Sinta-se à vontade para explorar as diferentes abas e descobrir mais sobre quem eu sou!",
-  personality_text: "Sou uma pessoa criativa, apaixonada por aprender coisas novas e sempre em busca de desafios. Gosto de me conectar com pessoas e compartilhar experiências. Valorizo a autenticidade e acredito que cada dia é uma oportunidade para crescer e evoluir.",
+  // 'personality_text' removido do defaultConfig
   interests_text: "Tenho diversos interesses que vão desde tecnologia e design até música e viagens. Adoro explorar novas culturas, experimentar diferentes culinárias e me manter atualizado com as últimas tendências. Nos momentos livres, gosto de ler, assistir filmes e passar tempo com amigos e família.",
   background_color: "#667eea",
   primary_color: "#a855f7",
@@ -17,7 +17,7 @@ async function onConfigChange(config) {
   const profileName = config.profile_name || defaultConfig.profile_name;
   const profileTitle = config.profile_title || defaultConfig.profile_title;
   const aboutText = config.about_text || defaultConfig.about_text;
-  const personalityText = config.personality_text || defaultConfig.personality_text;
+  // const personalityText = config.personality_text || defaultConfig.personality_text; // Linha removida
   const interestsText = config.interests_text || defaultConfig.interests_text;
   const backgroundColor = config.background_color || defaultConfig.background_color;
   const primaryColor = config.primary_color || defaultConfig.primary_color;
@@ -30,7 +30,7 @@ async function onConfigChange(config) {
   document.getElementById('profileName').textContent = profileName;
   document.getElementById('profileTitle').textContent = profileTitle;
   document.getElementById('aboutText').textContent = aboutText;
-  document.getElementById('personalityText').textContent = personalityText;
+  // document.getElementById('personalityText').textContent = personalityText; // Linha removida
   document.getElementById('interestsText').textContent = interestsText;
 
   document.body.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${primaryColor} 100%)`;
@@ -146,7 +146,7 @@ function mapToEditPanelValues(config) {
     ["profile_name", config.profile_name || defaultConfig.profile_name],
     ["profile_title", config.profile_title || defaultConfig.profile_title],
     ["about_text", config.about_text || defaultConfig.about_text],
-    ["personality_text", config.personality_text || defaultConfig.personality_text],
+    // ["personality_text", config.personality_text || defaultConfig.personality_text], // Linha removida
     ["interests_text", config.interests_text || defaultConfig.interests_text]
   ]);
 }
